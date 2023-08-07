@@ -1,6 +1,6 @@
 {
   "name": "shortify",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Create short URLs from their original URLs",
   "main": "./dist/main.js",
   "scripts": {
