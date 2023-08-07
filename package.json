@@ -1,11 +1,12 @@
 {
-  "name": "Shortify",
+  "name": "shortify",
   "version": "0.0.0",
-  "description": "",
+  "description": "Create short URLs from their original URLs",
   "main": "./dist/main.js",
   "scripts": {
     "start": "node  ./dist/main.js",
-    "tsc": "tsc && yarn copy-files",
+    "tsc": "tsc",
+    "build": "tsc",
     "dev": "ts-node-dev --respawn --pretty --transpile-only --ignore-watch node_modules src/main.ts",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -24,7 +25,13 @@
     "release:unstable:minor": "standard-version --release-as minor -t unstable-",
     "release:unstable:patch": "standard-version --release-as patch -t unstable-"
   },
-  "keywords": [],
+  "keywords": [
+    "short url",
+    "shortlink",
+    "nodejs",
+    "mongoose",
+    "express"
+  ],
   "dependencies": {
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
