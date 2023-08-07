@@ -1,0 +1,11 @@
+/.idea
+/.nginx
+/.scannerwork
+/.vscode
+/build
+/dist
+/node_modules
+/public
+!.*.js
+!*.html
+!*.hbs
