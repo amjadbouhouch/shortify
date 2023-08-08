@@ -20,12 +20,10 @@ export async function create({ originalUrl }: CreateParams) {
     });
 
     return newLink;
-  } catch (error: any) {
-    if (error?.code === 11000) {
-      throw new DuplicatedError('Link already exists');
-    } else {
-      throw error;
-    }
+  } catch (error) {
+    if (error && typeof error === 'object' && 'code' in error && error.code === 11000) throw new DuplicatedError('Link already exists');
+
+    throw error;
   }
 }
 
@@ -42,5 +40,12 @@ export async function getLinkByShortId(shortUrl: string) {
 }
 
 export async function incrementClicks(_id: string) {
+  return LinkModel.findByIdAndUpdate(_id, { $inc: { clicks: 1 } });
+}
+type UpdateAnalyticsArgs = {
+  _id: string;
+  referrerUrl: string;
+};
+export async function updateAnalytics({ _id, referrerUrl }: UpdateAnalyticsArgs) {
   return LinkModel.findByIdAndUpdate(_id, { $inc: { clicks: 1 } });
 }

@@ -38,7 +38,9 @@ export async function redirect(req: Request, response: Response) {
     throw new NotFoundError();
   }
 
-  linkService.incrementClicks(link._id);
+  const referrerUrl = req.get('Referer') || '/';
+
+  linkService.updateAnalytics({ _id: link._id, referrerUrl });
 
   response.redirect(link.originalUrl);
 }

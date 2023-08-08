@@ -1,3 +1,5 @@
+import mongoose from 'mongoose';
+
 /**
  * The function isUrlValid checks if a given string is a valid URL.
  * @param string - The `string` parameter is the URL string that you want to check for validity.
@@ -11,4 +13,8 @@ export function isUrlValid(string) {
   } catch (err) {
     return false;
   }
+}
+
+export function isMongoValidationError(error) {
+  return error instanceof mongoose.Error.ValidationError;
 }
