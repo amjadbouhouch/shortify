@@ -23,6 +23,8 @@ export async function create({ originalUrl }: CreateParams) {
   } catch (error: any) {
     if (error?.code === 11000) {
       throw new DuplicatedError('Link already exists');
+    } else {
+      throw error;
     }
   }
 }
