@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { ENV } from '../config';
 
 /**
  * The function isUrlValid checks if a given string is a valid URL.
@@ -17,4 +18,9 @@ export function isUrlValid(string) {
 
 export function isMongoValidationError(error) {
   return error instanceof mongoose.Error.ValidationError;
+}
+
+export function getShortLinkUrl(path: string) {
+  const url = new URL(path, ENV.BASE_URL);
+  return url.toString();
 }

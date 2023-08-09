@@ -3,4 +3,5 @@ export type LinkType = {
   originalUrl: string;
   shortUrl: string;
   clicks: number;
+  isActive: boolean;
 };

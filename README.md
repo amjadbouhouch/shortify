@@ -58,10 +58,11 @@ Before running the application, make sure to set up the required environment var
 ```bash
 # Required
 MONGODB_URI=your_mongodb_uri
-
+# Optional default TO: http://localhost:<PORT> 
+BASE_URL=your_base_url
 ```
 
-Replace `your_mongodb_uri` with the MongoDB connection URI, and you can also change the `PORT` if needed.
+Replace `your_mongodb_uri` with the MongoDB connection URI, and you can also change the `PORT` if needed or `BASE_URL`.
 
 ## Usage
 

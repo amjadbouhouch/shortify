@@ -7,4 +7,5 @@
 export const ENV = {
   MONGO_URI: process.env.MONGO_URI,
   SERVER_PORT: parseInt(process.env.SERVER_PORT as string) || 3000,
+  BASE_URL: process.env.BASE_URL || 'http://localhost:3000',
 } as const;

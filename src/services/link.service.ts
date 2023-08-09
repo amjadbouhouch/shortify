@@ -42,6 +42,21 @@ export async function getLinkByShortId(shortUrl: string) {
 export async function incrementClicks(_id: string) {
   return LinkModel.findByIdAndUpdate(_id, { $inc: { clicks: 1 } });
 }
+
+/**
+ * The function disables a link by updating its isActive property to false in the database.
+ * @param {string} _id - The _id parameter is a string that represents the unique identifier of the
+ * link that needs to be disabled.
+ * @returns the result of the `LinkModel.findByIdAndUpdate` method.
+ */
+export async function disableLink(_id: string) {
+  return LinkModel.findByIdAndUpdate(_id, {
+    $set: {
+      isActive: false,
+    },
+  });
+}
+
 type UpdateAnalyticsArgs = {
   _id: string;
   referrerUrl: string;

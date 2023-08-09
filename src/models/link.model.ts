@@ -22,6 +22,11 @@ const linkSchema = new Schema<LinkType>(
       default: 0,
       required: false,
     },
+    isActive: {
+      type: Boolean,
+      default: true,
+      required: false,
+    },
   },
   { timestamps: true },
 );
