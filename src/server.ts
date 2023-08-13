@@ -25,11 +25,6 @@ export function createExpressServer() {
   // Disable the "X-Powered-By" response header for security reasons.
   app.disable('x-powered-by');
 
-  // Create a GET request route handler for /health that returns a 200 status code and a 'UP' text response.
-  app.get('/health', (_req, res) => {
-    res.status(200).send('UP');
-  });
-
   // Return the configured Express application instance.
   return app;
 }
