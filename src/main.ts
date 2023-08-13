@@ -20,7 +20,7 @@ async function bootstrap() {
   const app = createExpressServer();
 
   // Create an http server instance with the created express application instance and start listening on the specified port/IP address.
-  const server = http.createServer(app).listen(ENV.SERVER_PORT, 'localhost', () => {
+  const server = http.createServer(app).listen(ENV.SERVER_PORT, '0.0.0.0', () => {
     const addressInfo = server.address() as AddressInfo;
     console.log(`Server running at http://${addressInfo.address}:${addressInfo.port}`);
   });
