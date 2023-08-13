@@ -1,4 +1,5 @@
-FROM node:16.17.1
+# 18.17.1
+FROM node:lts-alpine3.18
 
 WORKDIR /shortify
 
